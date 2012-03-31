@@ -10,7 +10,7 @@ criar () {
 	gedit $nome
 	}
 editar () {
-	ls -l |more
+	ls -lR |more
 	echo -n "Escolha o arquivo: "
 	read arquivo
 	gedit $arquivo
