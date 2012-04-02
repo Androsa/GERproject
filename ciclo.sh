@@ -19,16 +19,16 @@ editar () {
 git pull
 while true
 do
-	echo -e -n "Digite \033[44;37;1mcriar\033[m\c"
-	echo -e -n " ou \033[41;37;1meditar\033[m\c"
-	echo " para mexer em um arquivo."
+	echo -e -n "Digite \033[44;37;1m[c]\033[m\c"
+	echo -e -n " para criar ou \033[41;37;1m[e]\033[m\c"
+	echo " para editar um arquivo."
 	echo "Se não digitar nada vai enviar o(s) arquivo(s)"
 	read opcao
 	case $opcao in
-		"criar")
+		"c")
 			criar
 			;;
-		"editar")
+		"e")
 			editar
 			;;
 		"")
