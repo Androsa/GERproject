@@ -1,0 +1,24 @@
+bora-bora (DNS)
+1) /etc/bind/named.conf.option - indica quem pode acessar o dns
+options {
+	...
+	allow-query { any; }; - qualquer pessoa pode acessar dns
+	allow-query-cache { any; }; - habilita cache para todos as maquinas
+	allow-recursion { any; }; - permite consultas recursivas
+2) /etc/bind/named.conf.local
+	...
+	zone "rtfm.com.br" {
+		type master; - administrador configura tudo
+		file "/etc/bind/rtfm.com.br"; - administrador cria esse arquivo
+	};
+3) /etc/bind/rtfm.com.br
+	(projetado)
+
+tuvalu (dhcp)
+4) /etc/dhcp3/dhcpd.conf - aditar esse arquivo
+	subnet 192.168.0.0 netmask 255.255.255.0 {
+	...
+	option domain-name "rtfm.com.br";
+	option domain-name-server 192.168.2.1 ; - ip da máquina dns
+	...
+	}
