@@ -1,0 +1,25 @@
+; Dominio rtfm.com.br
+;
+; VARIAVEIS
+$TTL 86400
+;
+; OBRIGATÓRIO
+; SOA: inicio da autoridade
+@			IN	SOA	bora-bora.rtfm.com.br. administrador.rtfm.com.br. (
+			2012042400 ; serial aaaammdd(modificação)
+			1d ; refresh (atualizar one day)
+			1h ; retry (tentativa one hour)
+			1w ; expire (praso máximo para atualizar o servidor one week)
+			1d ; negative cache TTL (guardar os dados one day)
+)
+;
+; NS: servidor(es) DNS (tanto faz se colocar bora-bora ou bora-bora.rtfm.com.br. mas não pode esquecer de colocar o ponto)
+@			IN	NS	bora-bora.rtfm.com.br.
+;
+; OPCIONAL
+; A: endereços de máquina
+bora-bora 	IN	A	192.168.2.1
+;
+; CNAME: "apelidos" de maquinas (apelido não tem ip, nome de máquina tem)
+www			IN	CNAME	bora-bora
+dns			IN	CNAME	bora-bora
