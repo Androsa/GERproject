@@ -1,0 +1,25 @@
+bora-bora
+1)named.conf.local
+	zona "rtfm.com.br" {
+		type master; - (nova linha modificada)
+		file "/etc/bind/rtfm.com.br";
+		allow-transfers { 192.168.2.2/32; }; - somente esse ip (nova linha modificada)
+	};
+2)rtfm.com.br
+@			IN	SOA
+@			IN	NS	bora-bora.rtfm.com.br.
+@			IN	NS	sumatra.rtfm.com.br. - (nova linha modificada)
+bora-bora	IN	A	192.168.2.1
+sumatra		IN	A	192.168.2.2 - (nova linha modificada)
+
+sumatra - nova máquina
+1)named.conf.options
+igual a bora-bora - (nova linha modificada)
+2)named.conf.local
+	zone "rtfm.com.br" {
+		type slave; - indica que essa máquina é escrava
+		masters { 192.168.2.1; }; - recebe de quem recebe indica quem é a maquina mestre
+
+tuvalu
+1)/etc/dhcp3/dhcpd.conf - (nova linha modificada)
+option domain-name-servers 192.168.2.1, 192.168.2.2; - (nova linha modificada)
