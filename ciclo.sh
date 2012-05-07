@@ -10,9 +10,10 @@ help ()	 {
 	echo "[c] - Cria um arquivo."
 	echo "[e] - Editar um arquivo."
 	echo "[:] - Abre linha de comando."
-	echo "[send] - Envia as alterações."
-	echo "[exit] - Sair do programa sem salvar."
-	echo "[help] - Lista os comandos válidos."
+	echo "[enviar] - Envia as alterações."
+	echo "[sair] - Sair do programa sem salvar."
+	echo "[conflito] - Resolver conflito de arquivos."
+	echo "[ajuda] - Lista os comandos válidos."
 	echo ""
 	}
 criar () {
@@ -35,7 +36,7 @@ do
 	echo -e -n "Digite \033[44;37;1m[c]\033[m\c"
 	echo -e -n " para criar ou \033[41;37;1m[e]\033[m\c"
 	echo " para editar um arquivo."
-	echo "Digite help para ajuda."
+	echo "Digite ajuda para listar comandos."
 	echo ""
 	read opcao
 	case $opcao in
@@ -45,7 +46,7 @@ do
 		"e")
 			editar
 			;;
-		"send")
+		"enviar")
 			git add *
 			git commit -a
 			git push
@@ -62,10 +63,17 @@ do
 			$comando
 			done
 			;;
-		"help")
+		"conflito")
+			echo "Resolvendo conflito de arquivo(s)"
+			git stash 1>/dev/null
+			git pull
+			git stash pop 1>/dev/null
+			echo "Conflito resolvido."
+			;;
+		"ajuda")
 			help
 			;;
-		"exit")
+		"sair")
 			exit
 			;;
 		*)
