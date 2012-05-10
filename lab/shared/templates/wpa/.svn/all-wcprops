@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/tcc/projetos/!svn/ver/129/netkit-console/contrib/templates/wpa
+END
+wpa_passphrase
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/tcc/projetos/!svn/ver/129/netkit-console/contrib/templates/wpa/wpa_passphrase
+END
+wpa_supplicant
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/tcc/projetos/!svn/ver/129/netkit-console/contrib/templates/wpa/wpa_supplicant
+END
+wpa.conf
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tcc/projetos/!svn/ver/129/netkit-console/contrib/templates/wpa/wpa.conf
+END
+wpa_cli
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/tcc/projetos/!svn/ver/129/netkit-console/contrib/templates/wpa/wpa_cli
+END

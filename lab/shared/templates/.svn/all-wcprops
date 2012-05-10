@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/tcc/projetos/!svn/ver/129/netkit-console/contrib/templates
+END
+hostapd_authorize_port
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/tcc/projetos/!svn/ver/129/netkit-console/contrib/templates/hostapd_authorize_port
+END
+hostapd
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tcc/projetos/!svn/ver/129/netkit-console/contrib/templates/hostapd
+END
+hostapd.conf
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tcc/projetos/!svn/ver/126/netkit-console/contrib/templates/hostapd.conf
+END
+hostapd_cli
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/tcc/projetos/!svn/ver/129/netkit-console/contrib/templates/hostapd_cli
+END
+ieee802_1x.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tcc/projetos/!svn/ver/129/netkit-console/contrib/templates/ieee802_1x.c
+END
+hostapd.conf.radius
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/tcc/projetos/!svn/ver/127/netkit-console/contrib/templates/hostapd.conf.radius
+END
+hostapd_authorize_port.old
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/tcc/projetos/!svn/ver/129/netkit-console/contrib/templates/hostapd_authorize_port.old
+END
