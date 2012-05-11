@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/hostlab/firewall0-auto.sh
