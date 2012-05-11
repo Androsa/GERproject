@@ -1,0 +1,13 @@
+Para acresentar memória para a maquina virtual usando swap
+dd if=/dev/zero of=/swap count=1000 bs=102400
+du -sh swap
+mkswap /swap
+swapon /swap
+free
+
+Acrescentando mais memoria utilizando swap2
+dd if=/dev/zero of=/swap2 count=1000 bs=102400
+mkswap /swap2
+chmod 400 /swap2
+swapon /swap2
+free
