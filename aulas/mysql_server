@@ -1,0 +1,11 @@
+MYSQL (DMZservidor1)
+
+mysql -u root -p senha - logar no mysql
+nivel bd	> SHOW DATABASE;
+nivel bd	> USE mysql;
+nivel tabela	> SHOW TABLES; - mostra todas as bases
+nivel registro	> SELECT * FROM user \G; - lista o que o user pode acessar
+
+> CREATE DATABASE blog; - criar database blog
+> GRANT ALL PRIVILEGES ON blog.* TO user@localhost IDENTIFIED BY 'senha'; - criar usuário com permissão total
+> FLUSH PRIVILEGES; - para fazer valer os privilégios

@@ -11,4 +11,6 @@
 #
 # By default this script does nothing.
 
+/etc/init.d/bind9 restart
+
 exit 0
