@@ -1,0 +1,27 @@
+; Dominio rtfm.com.br
+;
+; VARIAVEIS
+$TTL 86400
+;
+; OBRIGATÓRIO
+; SOA: inicio da autoridade
+@			IN	SOA	graben.rtfm.com.br. administrador.rtfm.com.br. (
+			2012042400 ; serial aaaammdd(modificação)
+			1d ; refresh (atualizar one day)
+			1h ; retry (tentativa one hour)
+			1w ; expire (praso máximo para atualizar o servidor one week)
+			1d ; negative cache TTL (guardar os dados one day)
+)
+;
+; NS: servidor(es) DNS (tanto faz se colocar graben ou graben.rtfm.com.br. mas não pode esquecer de colocar o ponto)
+@			IN	NS	graben.rtfm.com.br.
+@			IN	NS	sturm.rtfm.com.br.
+;
+; OPCIONAL
+; A: endereços de máquina
+graben 	IN	A	192.168.2.7
+sturm	IN	A	192.168.2.8
+;
+; CNAME: "apelidos" de maquinas (apelido não tem ip, nome de máquina tem)
+www			IN	CNAME	graben
+dns			IN	CNAME	graben

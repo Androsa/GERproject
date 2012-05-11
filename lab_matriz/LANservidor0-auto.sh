@@ -12,8 +12,8 @@ if [ -d "/hostlab/LANservidor0/preserve" ]; then
 fi
 cp -p /hostlab/shared/templates/K95preserve /etc/rc0.d
 echo -n > /etc/default/preserve
-echo "/etc/bind" >> /etc/default/preserve
 echo "/etc/dhcp3" >> /etc/default/preserve
 echo "/etc/rc.local" >> /etc/default/preserve
+echo "/etc/bind" >> /etc/default/preserve
 sysctl -w net.ipv4.ip_forward=1
 echo COMPLETE > /proc/mconsole
