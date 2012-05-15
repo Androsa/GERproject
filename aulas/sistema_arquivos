@@ -1,0 +1,7 @@
+dd if=/dev/zero of=netkit.fs bs=10240k count=1000 - criar um hd de 10 giga
+mkf4.ext4 netkit.fs - criar sistema de arquivos para esse arquivo
+mount -o loop netkit.fs /mnt - montar essa imagem
+debootstrap sid /mnt http://ftp.br.debian.org/debian - instalar um sistema mínimo
+umount /mnt - desmontar
+criar link na pasta /netkit/fs/netkit-fs apontando para o hd criado
+O cara que sabe de tudo - eriberto.pro.br
