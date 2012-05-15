@@ -1,0 +1,26 @@
+1) Alterando o TimeZone:
+cp -p /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+
+2) Baixando o ntp:
+wget http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.6p5.tar.gz
+
+3) Descompactar:
+tar zxvf ntp-4.2.6p5.tar.gz
+
+4) Configurando e instalando:
+cd ntp-4.2.6p5
+./configure
+make
+make install
+
+5) Substitua o conteudo de /etc/ntp.conf por:
+wget http://www.ntp.br/xnix/ntp.conf
+
+6) Ajustando a hora:
+/usr/local/bin/ntpd -q -g
+
+7) Executando o ntp:
+/usr/local/bin/ntpd
+
+8) Consultar o status ntp:
+/usr/local/bin/ntpq -c pe
