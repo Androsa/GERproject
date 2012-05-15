@@ -1,0 +1,25 @@
+; Dominio rtfm.com.br
+;
+; VARIAVEIS
+$TTL 86400
+;
+; OBRIGATORIO
+; SOA: inicio da autoridade
+@			IN	SOA	firefinger.rtfm.com.br. administrador.rtfm.com.br. (
+			2012042400 ; serial aaaammdd(modificação)
+			1d ; refresh (atualizar one day)
+			1h ; retry (tentativa one hour)
+			1w ; expire (praso máximo para atualizar o servidor one week)
+			1d ; negative cache TTL (guardar os dados one day)
+)
+;
+; NS: servidor(es) DNS (tanto faz se colocar bora-bora ou bora-bora.rtfm.com.br. mas não pode esquecer de colocar o ponto)
+@			IN	NS	firefinger.rtfm.com.br.
+;
+; OPCIONAL
+; A: endereços de máquina
+firefinger 	IN	A	127.0.0.1	
+;
+; CNAME: "apelidos" de maquinas (apelido não tem ip, nome de máquina tem)
+www			IN	CNAME	firefinger
+dns			IN	CNAME	firefinger
