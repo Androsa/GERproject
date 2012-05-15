@@ -12,4 +12,5 @@
 # By default this script does nothing.
 /etc/init.d/dhcp3-server restart
 /etc/init.d/bind9 restart
+cp -p /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 exit 0

@@ -1,0 +1,2 @@
+# Alterando o TimeZone
+# cp -p /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
