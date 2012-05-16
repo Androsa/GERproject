@@ -1,7 +1,7 @@
 MYSQL (DMZservidor1)
 
 mysql -u root -p senha - logar no mysql
-nivel bd	> SHOW DATABASE;
+nivel bd	> SHOW DATABASES;
 nivel bd	> USE mysql;
 nivel tabela	> SHOW TABLES; - mostra todas as bases
 nivel registro	> SELECT * FROM user \G; - lista o que o user pode acessar
