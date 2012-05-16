@@ -14,4 +14,5 @@
 /etc/init.d/bind9 restart # Iniciando o DNS
 cp -p /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 /usr/local/bin/ntp # Iniciando o NTP
+/etc/init.d/mysql start # Ativa o mysql
 exit 0
