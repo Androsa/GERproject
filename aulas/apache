@@ -4,4 +4,15 @@ chroot /mnt - permite dar qualquer comando na máquina montada
 aptitude install apache2 - instalar apache
 vim /etc/apache2/apache2.conf - arquivo de configuração
 /usr/sbin/httpd - aplicação do apache
+/var/www/ - tem que ter a página inicial chamada de index.html e todas as páginas necessárias
+vim /etc/apache2/sites-enabled/000-default - configuração
+	telnet localhost 80
+	get /pag.html HTTP/1.1
+	host: localhost
+	telnet towel.blinkenlights.nl
+	aptitude install bb
+	/usr/games/bb
 
+DNS - configuração do dns
+www	IN	A	192.168.3.1
+blog	IN	CNAME	www
