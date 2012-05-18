@@ -1,0 +1,7 @@
+fdisk -lu netkit-fs
+mount -t ext2 -oloop,offset=$(expr 512 \* 64) netkit-fs /mnt - montar o hd do netkit
+chroot /mnt - permite dar qualquer comando na máquina montada
+aptitude install apache2 - instalar apache
+vim /etc/apache2/apache2.conf - arquivo de configuração
+/usr/sbin/httpd - aplicação do apache
+
