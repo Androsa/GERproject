@@ -23,5 +23,6 @@ graben  IN      A       192.168.2.7
 sturm   IN      A       192.168.2.8
 ;
 ; CNAME: "apelidos" de maquinas (apelido não tem ip, nome de máquina tem)
-www                     IN      CNAME   graben
+www                     IN      CNAME   sturm
 dns                     IN      CNAME   graben
+blog			IN 	CNAME 	sturm

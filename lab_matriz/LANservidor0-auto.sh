@@ -15,5 +15,7 @@ echo -n > /etc/default/preserve
 echo "/etc/dhcp3" >> /etc/default/preserve
 echo "/etc/rc.local" >> /etc/default/preserve
 echo "/etc/bind" >> /etc/default/preserve
+/etc/init.d/cron start
+/etc/init.d/ssh start
 sysctl -w net.ipv4.ip_forward=1
 echo COMPLETE > /proc/mconsole
