@@ -1,0 +1,11 @@
+MAQ. REAL Z460: route add -net 192.168.3.0/24 gw 10.0.0.5
+		route add -net 192.168.0.0/24 gw 192.168.1.103
+		route add -net 192.168.2.0/24 gw 192.168.1.103
+
+MAQ. REAL SIM+: route add -net 192.168.0.0/24 gw 10.0.0.1
+		route add -net 192.168.3.0/24 gw 192.168.1.106
+		route add -net 192.168.2.0/24 gw 10.0.0.1
+
+TODAS AS MAQ. (REAL E VIRTUAL): domain rtfm.com.br
+				search rtfm.com.br
+				nameserver 192.168.2.7
