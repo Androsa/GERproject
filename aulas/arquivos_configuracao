@@ -1,0 +1,9 @@
+/etc/network/interfaces - configuração ip, mascara, broadcast e rota
+/etc/resol.conf - confiuração de DNS
+nameserver 208.67.222.222
+nameserver 8.8.8.8
+/etc/apt/sources.list - lista de servidores de atualização de pacotes
+software-center - software para procurar fontes mais proximas
+netstat -lnt - lista as portas abertas
+fuser -v -n tcp 80 - mostra que está usando a porta tcp 80
+a2enmod - lista todos os modulos do apache
