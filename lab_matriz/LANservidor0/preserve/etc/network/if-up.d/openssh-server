@@ -1,0 +1,30 @@
+#! /bin/sh
+# Reload the OpenSSH server when an interface comes up, to allow it to start
+# listening on new addresses.
+
+set -e
+
+# Don't bother to restart sshd when lo is configured.
+if [ "$IFACE" = lo ]; then
+	exit 0
+fi
+
+# Only run from ifup.
+if [ "$MODE" != start ]; then
+	exit 0
+fi
+
+# OpenSSH only cares about inet and inet6. Get thee gone, strange people
+# still using ipx.
+if [ "$ADDRFAM" != inet ] && [ "$ADDRFAM" != inet6 ]; then
+	exit 0
+fi
+
+# Is /usr mounted?
+if [ ! -e /usr/sbin/sshd ]; then
+	exit 0
+fi
+
+/etc/init.d/ssh reload >/dev/null 2>&1 || true
+
+exit 0

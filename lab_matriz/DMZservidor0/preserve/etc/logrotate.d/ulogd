@@ -1,0 +1,8 @@
+/var/log/ulog/*.log {
+    missingok
+    sharedscripts
+    create 640 root adm
+    postrotate
+	/etc/init.d/ulogd reload
+    endscript
+}

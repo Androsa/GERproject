@@ -1,0 +1,52 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          rinetd
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+### END INIT INFO
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON=/usr/sbin/rinetd
+CONFFILE=/etc/rinetd.conf
+NAME=rinetd
+DESC="internet redirection server"
+
+test -f $DAEMON || exit 0
+test -f $CONFFILE || exit 0
+
+set -e
+
+case "$1" in
+  start)
+    echo -n "Starting $DESC:"
+    start-stop-daemon --start --quiet --exec $DAEMON && echo -n " $NAME"
+    echo "."
+    ;;
+  stop)
+    echo -n "Stopping $DESC:"
+    start-stop-daemon --stop --quiet --pidfile /var/run/rinetd.pid --exec $DAEMON && echo -n " $NAME"
+    echo "."
+    ;;
+  reload|force-reload)
+    echo -n "Reloading configuration of $DESC:"
+    start-stop-daemon --stop --quiet --pidfile /var/run/rinetd.pid --signal 1 --exec $DAEMON && echo -n " $NAME"
+    echo "."
+    ;;
+  restart)
+    echo -n "Stopping $DESC:"
+    start-stop-daemon --stop --quiet --pidfile /var/run/rinetd.pid --exec $DAEMON && echo -n " $NAME"
+    echo "."
+    sleep 1
+    echo -n "Starting $DESC:"
+    start-stop-daemon --start --quiet --pidfile /var/run/rinetd.pid --exec $DAEMON && echo -n " $NAME"
+    echo "."
+    ;;
+  *)
+    echo "Usage: /etc/init.d/$NAME {start|stop|reload|restart|force-reload}"
+    exit 1
+    ;;
+esac
+
+exit 0

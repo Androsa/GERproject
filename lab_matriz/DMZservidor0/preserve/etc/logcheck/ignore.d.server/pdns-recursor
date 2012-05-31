@@ -1,0 +1,4 @@
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ pdns_recursor\[[0-9]+\]: stats: [0-9]+ questions, [0-9]+ cache entries, [0-9]+ negative entries, [0-9]+% cache hits
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ pdns_recursor\[[0-9]+\]: stats: throttle map: [0-9]+, ns speeds: [0-9]+
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ pdns_recursor\[[0-9]+\]: stats: outpacket\/query ratio [0-9]+%, [0-9]+% throttled, [0-9]+ no-delegation drops
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ pdns_recursor\[[0-9]+\]: stats: [0-9]+ outgoing tcp connections, [0-9]+ queries running, [0-9]+ outgoing timeouts

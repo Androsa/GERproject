@@ -1,0 +1,17 @@
+#! /bin/sh
+#
+# This script will be called each time a remote peer change its address.
+#
+# The arguments on the command line will be the interface name and the real
+# remote address.
+#
+
+# Helper functions. ifname and remaddr will be set automatically
+. /usr/lib/pipsecd/functions
+
+case $ifname in
+    #ul0) turnon zaphod.ldpnet.ada.eu.org marvin.ldpnet.ada.eu.org ;;
+    #ul1) turnon 137.194.8.199 137.194.160.199 137.194.160.121 eth0 ;;
+    #ipsec0) turnon 192.168.10.1 192.168.10.2 ;;
+    *) logger -p error -t pipsecd "Unknown interface $ifname ($remaddr)" ;;
+esac

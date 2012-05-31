@@ -1,0 +1,15 @@
+/var/log/xorp/*.log {
+        weekly
+	missingok
+	rotate 4
+	compress
+	delaycompress
+	notifempty
+	create 640 xorp adm
+	sharedscripts
+	postrotate
+		if [ -f /var/run/xorp.pid ]; then
+			/etc/init.d/xorp restart > /dev/null
+		fi
+	endscript
+}

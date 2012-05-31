@@ -1,0 +1,85 @@
+###############################################################################
+#
+#  MIME types and programs that process those types
+#
+#  Much of this file is generated automatically by the program "update-mime".
+#  Please see the "update-mime" man page for more information.
+#
+#  Users can add their own rules if they wish by creating a ".mailcap"
+#  file in their home directory.  Entries included there will take
+#  precedence over those listed here.
+#
+###############################################################################
+
+
+###############################################################################
+#
+#  User section follows:  Any entries included in this section will take
+#  precedence over those created by "update-mime".  DO NOT CHANGE the
+#  "User Section Begins" and "User Section Ends" lines, or anything outside
+#  of this section!
+#
+
+# ----- User Section Begins ----- #
+# -----  User Section Ends  ----- #
+
+###############################################################################
+
+text/plain; less '%s'; needsterminal
+text/html; /usr/bin/sensible-browser '%s'; description=HTML Text; nametemplate=%s.html
+application/x-troff-man; /usr/bin/nroff -mandoc -Tutf8; copiousoutput; print=/usr/bin/nroff -mandoc -Tutf8 | print text/plain:-
+image/avs; display 'avs:%s'; test=test -n "$DISPLAY"
+image/bie; display 'jbig:%s'; test=test -n "$DISPLAY"
+image/x-ms-bmp; display 'bmp:%s'; test=test -n "$DISPLAY"
+image/cmyk; display 'cmyk:%s'; test=test -n "$DISPLAY"
+image/dcx; display 'dcx:%s'; test=test -n "$DISPLAY"
+image/eps; display 'eps:%s'; test=test -n "$DISPLAY"
+image/fax; display 'fax:%s'; test=test -n "$DISPLAY"
+image/fits; display 'fits:%s'; test=test -n "$DISPLAY"
+image/gif; display 'gif:%s'; test=test -n "$DISPLAY"
+image/gray; display 'gray:%s'; test=test -n "$DISPLAY"
+image/jpeg; display 'jpeg:%s'; test=test -n "$DISPLAY"
+image/pjpeg; display 'jpeg:%s'; test=test -n "$DISPLAY"
+image/miff; display 'miff:%s'; test=test -n "$DISPLAY"
+image/mono; display 'mono:%s'; test=test -n "$DISPLAY"
+image/mtv; display 'mtv:%s'; test=test -n "$DISPLAY"
+image/x-portable-bitmap; display 'pbm:%s'; test=test -n "$DISPLAY"
+image/pcd; display 'pcd:%s'; test=test -n "$DISPLAY"
+image/pcx; display 'pcx:%s'; test=test -n "$DISPLAY"
+image/pdf; display 'pdf:%s'; test=test -n "$DISPLAY"
+image/x-portable-graymap; display 'pgm:%s'; test=test -n "$DISPLAY"
+image/pict; display 'pict:%s'; test=test -n "$DISPLAY"
+image/png; display 'png:%s'; test=test -n "$DISPLAY"
+image/x-portable-anymap; display 'pnm:%s'; test=test -n "$DISPLAY"
+image/x-portable-pixmap; display 'ppm:%s'; test=test -n "$DISPLAY"
+image/ps; display 'ps:%s'; test=test -n "$DISPLAY"
+image/rad; display 'rad:%s'; test=test -n "$DISPLAY"
+image/x-rgb; display 'rgb:%s'; test=test -n "$DISPLAY"
+image/rgba; display 'rgba:%s'; test=test -n "$DISPLAY"
+image/rla; display 'rla:%s'; test=test -n "$DISPLAY"
+image/rle; display 'rle:%s'; test=test -n "$DISPLAY"
+image/sgi; display 'sgi:%s'; test=test -n "$DISPLAY"
+image/sun-raster; display 'sun:%s'; test=test -n "$DISPLAY"
+image/targa; display 'tga:%s'; test=test -n "$DISPLAY"
+image/tiff; display 'tiff:%s'; test=test -n "$DISPLAY"
+image/uyvy; display 'uyvy:%s'; test=test -n "$DISPLAY"
+image/vid; display 'vid:%s'; test=test -n "$DISPLAY"
+image/viff; display 'viff:%s'; test=test -n "$DISPLAY"
+image/x-xbitmap; display 'xbm:%s'; test=test -n "$DISPLAY"
+image/x-xpixmap; display 'xpm:%s'; test=test -n "$DISPLAY"
+image/x-xwindowdump; display 'xwd:%s'; test=test -n "$DISPLAY"
+image/x-icon; display 'icon:%s'; test=test -n "$DISPLAY"
+image/yuv; display 'yuv:%s'; test=test -n "$DISPLAY"
+application/x-tar; /bin/tar tvf -; print=/bin/tar tvf - | print text/plain:-; copiousoutput
+application/x-gtar; /bin/tar tvzf -; print=/bin/tar tvzf - | print text/plain:-; copiousoutput
+text/plain; more '%s'; needsterminal
+text/html; /usr/bin/links '%s'; needsterminal; description=HTML Text; nametemplate=%s.html
+text/plain; view '%s'; edit=vim '%s'; compose=vim '%s'; needsterminal
+text/html; /usr/bin/links -dump '%s'; copiousoutput; description=HTML Text; nametemplate=%s.html
+text/html; /usr/bin/lynx -force_html '%s'; needsterminal; description=HTML Text; nametemplate=%s.html
+text/html; /usr/bin/lynx -dump -force_html '%s'; copiousoutput; description=HTML Text; nametemplate=%s.html
+text/*; less '%s'; needsterminal
+text/*; view '%s'; edit=vim '%s'; compose=vim '%s'; needsterminal
+text/*; more '%s'; needsterminal
+application/x-debian-package; /usr/lib/mime/debian-view '%s'; needsterminal; description=Debian GNU/Linux Package; nametemplate=%s.deb
+audio/basic; /usr/lib/mime/playaudio '%s'; description=Basic uLaw Audio; nametemplate=%s.au

@@ -1,0 +1,6 @@
+/var/log/mrtg/mrtg.log {
+	weekly
+	rotate 12
+	compress
+        missingok
+}

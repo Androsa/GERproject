@@ -1,0 +1,9 @@
+#!/bin/sh
+
+PATH="/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Move to the spool directory to avoid core dump in resolvconf
+cd /var/spool/squid
+
+# Make squid aware of changes to resolv.conf
+invoke-rc.d squid reload || true
