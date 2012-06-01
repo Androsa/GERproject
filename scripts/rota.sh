@@ -21,21 +21,24 @@ dns () {
 
 case $operacao in
 	"1")
-		ip1=$(/sbin/ifconfig eth0 | grep 'inet end' | awk '{print $3}')
+		#ip1=$(/sbin/ifconfig eth0 | grep 'inet end' | awk '{print $3}')
 		route add -net 192.168.0.0/24 gw 10.0.0.1
-		route add -net 192.168.3.0/24 gw $ip1
+		route add -net 192.168.3.0/24 gw 192.168.1.106
 		route add -net 192.168.2.0/24 gw 10.0.0.1
 		dns
+		echo "Pronto....!"
 		;;
 	"2")
-		ip2=$(/sbin/ifconfig eth0 | grep 'inet end' | awk '{print $3}')
+		#ip2=$(/sbin/ifconfig wlan0 | grep 'inet end' | awk '{print $3}')
 		route add -net 192.168.3.0/24 gw 10.0.0.5
-		route add -net 192.168.0.0/24 gw $ip2
-		route add -net 192.168.2.0/24 gw $ip2
+		route add -net 192.168.0.0/24 gw 192.168.1.103
+		route add -net 192.168.2.0/24 gw 192.168.1.103
 		dns
+		echo "Pronto....!"
 		;;
 	"3")
 		mv /etc/resolv.conf.original /etc/resolv.conf
+		echo "Pronto....!"
 		;;
 	
 	*)
