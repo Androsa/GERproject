@@ -12,7 +12,5 @@
 # By default this script does nothing.
 /etc/init.d/dhcp3-server restart
 /etc/init.d/bind9 restart # Iniciando o DNS
-cp -p /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
-/usr/local/bin/ntp # Iniciando o NTP
-/etc/init.d/mysql start # Ativa o mysql
+/usr/local/bin/ntpd # Iniciando o NTP
 exit 0

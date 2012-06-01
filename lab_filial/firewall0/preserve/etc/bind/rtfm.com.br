@@ -18,7 +18,7 @@ $TTL 86400
 ;
 ; OPCIONAL
 ; A: endereços de máquina
-firefinger 	IN	A	127.0.0.1	
+firefinger 	IN	A	192.168.3.254	
 ;
 ; CNAME: "apelidos" de maquinas (apelido não tem ip, nome de máquina tem)
 www			IN	CNAME	firefinger

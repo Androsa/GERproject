@@ -1,0 +1,9 @@
+tmpfs /lib/init/rw tmpfs rw,nosuid,mode=0755 0 0
+proc /proc proc rw,noexec,nosuid,nodev 0 0
+sysfs /sys sysfs rw,noexec,nosuid,nodev 0 0
+tmpfs /dev/shm tmpfs rw,nosuid,nodev 0 0
+devpts /dev/pts devpts rw,noexec,nosuid,gid=5,mode=620 0 0
+rootfs / rootfs rw 0 0
+none /lib/modules hostfs rw,/home/anderson/netkit/kernel/modules/lib/modules 0 0
+none /hosthome hostfs rw,/home/anderson 0 0
+none /hostlab hostfs rw,/home/anderson/lab 0 0

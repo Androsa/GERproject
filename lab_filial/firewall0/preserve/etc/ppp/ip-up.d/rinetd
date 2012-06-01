@@ -1,0 +1,8 @@
+#! /bin/sh
+
+set -e
+
+if [ -x /usr/sbin/rinetd ]; then
+	/etc/init.d/rinetd reload > /dev/null
+fi
+
