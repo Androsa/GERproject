@@ -1,6 +1,6 @@
 <VirtualHost *:80>
 	ServerAdmin webmaster@localhost
-
+	RedirectMatch ^/(.*) https://www.rtfm.com.br/blog
 	DocumentRoot /var/www
 	<Directory />
 		Options FollowSymLinks
