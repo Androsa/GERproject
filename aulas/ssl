@@ -1,0 +1,59 @@
+aptitude update
+aptitude install openssl
+	/etc/apache2/sites-availabled
+		     sites-enabled
+		     mods-availabled - mods disponíveis
+		     mods-enabled - mods sendo executados
+		     apache2.conf
+a2enmod - mostra toda a lista do mods-availabled podendo ativar o que quiser
+a2ensite - mostra tofa a lista do sites-availabled, será necessário ativar o default-ssl
+cd /etc/apache2/sites-enabled/
+vi default-ssl
+linhas 51 e 52 para trocar certificado - SSLCertificateFile
+openssl req -new -x509 -nodes -days 365 -out /etc/ssl/certs/apache2.pem -keyout /etc/ssl/certs/apache2.pem - cria o certificado em si.
+	BR
+	Santa Catarina
+	Sao Jose - não aceita acentos
+	IFSC
+	COTEL
+	www.rtfm.com.br
+	administrador@rtfm.com.br
+openssl -x509 -text -in /etc/ssj/certs/apache2.pem - mostra o certificado criado
+cd /etc/apache2/sites-enabled/
+vi default-ssl
+	SSLCertificateFile	/etc/ssl/certs/apache2.pem - alterando
+	SSLCertificateKeyFile	/etc/ssl/certs/apache2.pem - alterando
+cd /etc/apache2/sites-enabled/
+vi 000-default
+	RedirectMatch ^/(.*) https://192.168.2.8/blog
+cd /etc/apache2/conf.d
+vim blog - esse arquivo não existe
+	<Directory /var/www/blog>
+		Options None - cara do sistema pode adicionar
+		AllowOverride None - cara do sistema pode sobrescrever
+		Order allow,deny - libera todo mundo,bloqueia ninguem
+		Allow from all
+
+		Dav on - sistema de arquivos
+		
+		AuthType Basic
+		AuthName "Acesso restrito. Identifique-se!"
+		AuthUserFile /etc/apache2/blog.senhas - criar esse arquivo
+		Require valid-user
+
+		#opcional - para bloquear PUT e DELETE
+		<Limit PUT DELETE>
+			Order allow,deny
+			Deny from all - bloqueia todos os ususários
+			Require user ederson - somente usuario ederson pode apagar e enviar
+		</limit>
+	</Directory>
+htpasswd -c -s /etc/apache2/blog.senhas ederson
+senha
+repetir senha
+chown root /etc/apache2/blog.senhas
+chgrp www.data /etc/apache2/blog.senhas
+chmod 640 /etc/apache2/blog.senhas
+ls -l /etc/apache2/blog.senhas
+a2enmod dav dav_fs dav_lock - habilitar DAV
+reiniciar apache
