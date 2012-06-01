@@ -6,23 +6,38 @@ then
 	exit
 fi
 
-	echo -n "Digite '1' para configurar rotas no notebook Sim "
-	echo -n "ou '2' para configurar rotas no notebook Lenovo: "
+dns () {
+	mv /etc/resolv.conf /etc/resolv.conf.original
+	echo domain rtfm.com.br > /etc/resolv.conf
+	echo search rtfm.com.br
+	echo nameserver 192.168.2.7
+	echo nameserver 192.168.2.8
+
+	echo -n "Digite '1' para configurar rotas no notebook Sim,"
+	echo -n " '2' para configurar rotas no notebook Lenovo "
+	echo -n "ou '3' para desfazer a configuração do dns: "
 	read operacao
 
 case "${operacao}" in
 	"1")
+		ip1=$(/sbin/ifconfig eth0 | grep 'inet end' | awk '{print $3}')
 		route add -net 192.168.0.0/24 gw 10.0.0.1
-		route add -net 192.168.3.0/24 gw 192.168.1.106
+		route add -net 192.168.3.0/24 gw $ip1
 		route add -net 192.168.2.0/24 gw 10.0.0.1
+		dns
 		;;
 	"2")
+		ip2=$(/sbin/ifconfig eth0 | grep 'inet end' | awk '{print $3}')
 		route add -net 192.168.3.0/24 gw 10.0.0.5
-		route add -net 192.168.0.0/24 gw 192.168.1.103
-		route add -net 192.168.2.0/24 gw 192.168.1.103
+		route add -net 192.168.0.0/24 gw $ip2
+		route add -net 192.168.2.0/24 gw $ip2
+		dns
+		;;
+	"3")
+		mv /etc/resolv.conf.original /etc/resolv.conf
 		;;
 	
 	*)
-		echo "Operado invalido. Tente novamente."
+		echo "Opção invalida. Tente novamente."
 		;;
 esac
