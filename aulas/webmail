@@ -1,0 +1,40 @@
+aptitude update
+DMZ0 - DNS e HTTP
+DMZ1 - MySQL, SMTP e IMAP
+aptitude install postfix
+	só da enter em tudo
+cd /etc/postfix
+vi /etc/bind/rtfm.com.br
+	@ 	IN 	MX 	0 	mail.rtfm.com.br.
+	mail	IN	A	ip
+
+vi main.cf
+	#geral
+	myhostname = mail.rtfm.com.br
+	mydomain = rtfm.com.br
+	biff = no
+	inet_interfaces = all
+
+	#usuarios
+	alias_maps = hash:/etc/aliases
+	alias_database = hash:/etc/aliases
+
+	#envio (MUA -> MTA)
+	myorigin = $myhostname
+	relayhost = 
+	mynetworks = 127.0.0.0/8, 192.168.1.0/24
+	append_dot_mydomain = no
+
+	#recebimento (MTA -> MUA)
+	mydestination = $mydomain, $myhostname, localhost, localhost.localdomain
+	smtpd_banner = $myhostname SMTP Server
+	mailbox_size_limit = 0 ;cota por usuário
+	recipient_delimiter = *
+
+	#Pode ser configurado TTL
+
+Depois da configuração é só reiniciar o serviço:
+service postfix restart
+aptitude install dovecot-imapd - IMAP
+roundcube, squirrelmail, horde, zimbra - aplicação para servidor de email
+
