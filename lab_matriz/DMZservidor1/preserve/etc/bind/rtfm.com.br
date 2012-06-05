@@ -16,6 +16,8 @@ $TTL 86400
 ; NS: servidor(es) DNS (tanto faz se colocar graben ou graben.rtfm.com.br. mas não pode esqueceer de colocar o ponto)
 @                       IN      NS      graben.rtfm.com.br.
 @                       IN      NS      sturm.rtfm.com.br.
+@			IN	MX	0 	mail.rtfm.com.br.
+mail			IN	A	192.168.2.8
 ;
 ; OPCIONAL
 ; A: endereços de máquina
