@@ -54,3 +54,6 @@ telnetd:x:114:
 uml-net:x:115:
 xorp:x:116:
 guest:x:1000:
+syslog:x:117:
+postfix:x:118:
+postdrop:x:119:

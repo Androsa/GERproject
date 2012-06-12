@@ -1,0 +1,28 @@
+#geral
+myhostname = mail.rtfm.com.br
+mydomain = rtfm.com.br
+biff = no
+inet_interfaces = all
+
+#usuarios
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+
+#envio (MUA -> MTA)
+myorigin = $myhostname
+relayhost = 
+mynetworks = 127.0.0.0/8, 192.168.2.0/24, 192.168.0.0/24, 192.168.3.0/24
+append_dot_mydomain = no
+
+#recebimento (MTA -> MUA)
+mydestination = $mydomain, $myhostname, localhost, localhost.localdomain
+smtpd_banner = $myhostname SMTP Server
+mailbox_size_limit = 0
+recipient_delimiter = +
+
+# TLS parameters
+smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+smtpd_use_tls=yes
+smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache

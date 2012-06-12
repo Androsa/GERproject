@@ -14,14 +14,19 @@ $TTL 86400
 )
 ;
 ; NS: servidor(es) DNS (tanto faz se colocar graben ou graben.rtfm.com.br. mas não pode esquecer de colocar o ponto)
-@			IN	NS	graben.rtfm.com.br.
-@			IN	NS	sturm.rtfm.com.br.
+@	IN	NS		graben.rtfm.com.br.
+@	IN	NS		sturm.rtfm.com.br.
+@	IN	MX	0	mail.rtfm.com.br.
 ;
 ; OPCIONAL
 ; A: endereços de máquina
-graben 	IN	A	192.168.2.7
-sturm	IN	A	192.168.2.8
+graben 	IN	A		192.168.2.7
+sturm	IN	A		192.168.2.8
+mail	IN	A		192.168.2.8
 ;
 ; CNAME: "apelidos" de maquinas (apelido não tem ip, nome de máquina tem)
-www			IN	CNAME	sturm
-dns			IN	CNAME	graben
+www	IN	CNAME		sturm.rtfm.com.br.
+dns	IN	CNAME		graben.rtfm.com.br.
+smtp	IN	CNAME		mail.rtfm.com.br.
+imap	IN	CNAME		mail.rtfm.com.br.
+webmail	IN	CNAME		www.rtfm.com.br.

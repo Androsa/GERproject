@@ -9,3 +9,4 @@ MAQ. REAL SIM+: route add -net 192.168.0.0/24 gw 10.0.0.1
 TODAS AS MAQ. (REAL E VIRTUAL): domain rtfm.com.br
 				search rtfm.com.br
 				nameserver 192.168.2.7
+				nameserver 192.168.2.8

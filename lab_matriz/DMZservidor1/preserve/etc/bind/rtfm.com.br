@@ -17,12 +17,12 @@ $TTL 86400
 @                       IN      NS      graben.rtfm.com.br.
 @                       IN      NS      sturm.rtfm.com.br.
 @			IN	MX	0 	mail.rtfm.com.br.
-mail			IN	A	192.168.2.8
 ;
 ; OPCIONAL
 ; A: endereços de máquina
 graben  IN      A       192.168.2.7
 sturm   IN      A       192.168.2.8
+mail			IN	A	192.168.2.8
 ;
 ; CNAME: "apelidos" de maquinas (apelido não tem ip, nome de máquina tem)
 www                     IN      CNAME   sturm

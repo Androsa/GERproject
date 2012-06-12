@@ -54,3 +54,6 @@ telnetd:!::
 uml-net:!::
 xorp:!::
 guest:!::
+syslog:!::
+postfix:!::
+postdrop:!::
