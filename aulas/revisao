@@ -1,0 +1,18 @@
+1) DMZ0) /etc/bind/rtfm.com.br
+
+	@	IN	NS	ns1.rtfm.com.br.
+	@	IN	NS	ns2.rtfm.com.br. (DNS escravo)
+	@	IN	MX	0 mail.rtfm.com.br. (email)
+	ns1	IN	A	192.168.2.1	
+	ns2	IN	A	192.168.2.2 (DNS escravo)
+	mail	IN	A	192.168.2.2 (email)
+	smtp	IN	CNAME	mail.rtfm.com.br. (email)
+	imap	IN	CNAME	mail.rtfm.com.br. (email)
+	webmail	IN	CNAME	www.rtfm.com.br.
+
+2) DMZ1) (reiniciar o DNS)
+
+3) /etc/postfix/main.cf
+	
+	
+ 
