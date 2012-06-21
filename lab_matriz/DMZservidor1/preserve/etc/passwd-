@@ -37,4 +37,5 @@ guest:x:1000:1000::/home/guest:/bin/sh
 syslog:x:117:117::/home/syslog:/bin/false
 postfix:x:118:118::/var/spool/postfix:/bin/false
 dovecot:x:119:120:Dovecot mail server,,,:/usr/lib/dovecot:/bin/false
-dovenull:x:120:65534::/nonexistent:/bin/false
+dovenull:x:120:65534:Dovecot login user,,,:/nonexistent:/bin/false
+mysql:x:121:121:MySQL Server,,,:/nonexistent:/bin/false

@@ -6,7 +6,7 @@ $TTL 86400
 ; OBRIGATÓRIO
 ; SOA: inicio da autoridade
 @			IN	SOA	graben.rtfm.com.br. administrador.rtfm.com.br. (
-			2012042400 ; serial aaaammdd(modificação)
+			2012061501 ; serial aaaammdd(modificação)
 			1d ; refresh (atualizar one day)
 			1h ; retry (tentativa one hour)
 			1w ; expire (praso máximo para atualizar o servidor one week)
@@ -23,10 +23,13 @@ $TTL 86400
 graben 	IN	A		192.168.2.7
 sturm	IN	A		192.168.2.8
 mail	IN	A		192.168.2.8
+portal	IN	A		192.168.2.8
 ;
 ; CNAME: "apelidos" de maquinas (apelido não tem ip, nome de máquina tem)
 www	IN	CNAME		sturm.rtfm.com.br.
 dns	IN	CNAME		graben.rtfm.com.br.
+blog	IN	CNAME		sturm.rtfm.com.br.
 smtp	IN	CNAME		mail.rtfm.com.br.
 imap	IN	CNAME		mail.rtfm.com.br.
 webmail	IN	CNAME		www.rtfm.com.br.
+joomla	IN	CNAME		portal.rtfm.com.br.

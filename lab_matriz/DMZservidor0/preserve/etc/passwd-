@@ -34,4 +34,4 @@ telnetd:x:114:114::/nonexistent:/bin/false
 uml-net:x:115:115::/home/uml-net:/bin/false
 xorp:x:116:116:Xorp admin:/var/log/xorp:/bin/false
 guest:x:1000:1000::/home/guest:/bin/sh
-mysql:x:117:117::/var/lib/mysql:/bin/false
+mysql:x:117:117:MySQL Server,,,:/var/lib/mysql:/bin/false

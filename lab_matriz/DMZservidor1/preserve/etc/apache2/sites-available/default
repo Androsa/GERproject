@@ -1,6 +1,8 @@
 <VirtualHost *:80>
 	ServerAdmin webmaster@localhost
 #	RedirectMatch ^/(.*) https://www.rtfm.com.br/blog
+	RedirectMatch ^/webmail https://www.rtfm.com.br/webmail
+	RedirectMatch ^/portal http://www.rtfm.com.br/joomla
 	DocumentRoot /var/www
 	<Directory />
 		Options FollowSymLinks

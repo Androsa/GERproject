@@ -54,3 +54,4 @@ telnetd:!::
 uml-net:!::
 xorp:!::
 guest:!::
+mysql:!::

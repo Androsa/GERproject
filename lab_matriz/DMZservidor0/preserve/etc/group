@@ -55,3 +55,4 @@ uml-net:x:115:
 xorp:x:116:
 guest:x:1000:
 mysql:x:117:
+administrador:x:1001:

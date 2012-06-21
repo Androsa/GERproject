@@ -58,3 +58,5 @@ syslog:x:117:
 postfix:x:118:
 postdrop:x:119:
 dovecot:x:120:
+mysql:x:121:
+administrador:x:1001:
