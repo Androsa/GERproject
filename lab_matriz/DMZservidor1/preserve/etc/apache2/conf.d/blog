@@ -1,0 +1,20 @@
+#<Directory /var/www/blog>
+#		Options None - cara do sistema pode adicionar
+#		AllowOverride None - cara do sistema pode sobrescrever
+#		Order allow,deny - libera todo mundo,bloqueia ninguem
+#		Allow from all
+
+#		Dav on - sistema de arquivos
+
+#		AuthType Basic
+#		AuthName "Acesso restrito. Identifique-se!"
+#		AuthUserFile /etc/apache2/blog.senhas - criar esse arquivo
+#		Require valid-user
+
+		#opcional - para bloquear PUT e DELETE
+#		<Limit PUT DELETE>
+#			Order allow,deny
+#			Deny from all - bloqueia todos os ususários
+#		Require user ederson - somente usuario ederson pode apagar e enviar
+#		</limit>
+#</Directory>
