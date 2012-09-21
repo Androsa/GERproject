@@ -1,0 +1,45 @@
+#!/bin/bash
+echo "Programa de backup full"
+echo " "
+ 
+dadosfull() {
+ 
+SRCDIR="/home" % Diretório origem do backup
+DSTDIR=/backup % Diretório destino do backup
+DATA=`date +%x-%k%M%S` % Data atual no formato dd-mm-aa-hhmmss
+ 
+#criar o arquivo full-data.tar no diretório de destino
+ARQ=$DSTDIR/full-$DATA.tar.gz
+#data de inicio do backup
+DATAIN=`date +%c`
+#echo "Data de inicio: $DATAIN"
+ 
+}
+ 
+backupfull(){
+sync #Limpa buffers do sistema de arquivos
+tar -zcvf $ARQ $SRCDIR #Vai compactar todo /home ($SRCDIR) com o nome de /backup/full-$DATA.tar.gz ($ARQ)
+if [ $? -eq 0 ] ; then
+   #echo "----------------------------------------"
+    #    echo "Backup Full concluído com Sucesso"
+   DATAFIN=`date +%c`
+   #echo "Data de termino: $DATAFIN"
+   echo "Backup realizado com sucesso" >> /var/log/backup_full.log
+   echo "Criado pelo usuário: $USER" >> /var/log/backup_full.log
+   echo "INICIO: $DATAIN" >> /var/log/backup_full.log
+   echo "FIM: $DATAFIN" >> /var/log/backup_full.log
+   echo "-----------------------------------------" >> /var/log/backup_full.log
+   #echo " "
+   #echo "Log gerado em /var/log/backup_full.log"
+   echo "Backup OK $(date)" |mutt -s backup -c andersonrosa8@gmail.com, ricardo.ifsc@gmail.com, ricardo@rtfm.com.br, androsa@rtfm.com.br
+   scp $ARQ teleifsc@10.0.0.1:~/backup
+else
+   echo "ERRO! Backup do dia $DATAIN" >> /var/log/backup_full.log
+   echo "Falha no backup do dia $(date)" |mutt -s backup -c andersonrosa8@gmail.com, ricardo.ifsc@gmail.com
+fi
+}
+ 
+dadosfull
+backupfull
+ 
+exit 0
