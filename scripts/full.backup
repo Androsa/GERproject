@@ -4,9 +4,9 @@ echo " "
  
 dadosfull() {
  
-SRCDIR="/home" % Diretório origem do backup
-DSTDIR=/backup % Diretório destino do backup
-DATA=`date +%x-%k%M%S` % Data atual no formato dd-mm-aa-hhmmss
+SRCDIR="/" # Diretório origem do backup
+DSTDIR=/backup # Diretório destino do backup
+DATA=`date +%x-%k%M%S` # Data atual no formato dd-mm-aa-hhmmss
  
 #criar o arquivo full-data.tar no diretório de destino
 ARQ=$DSTDIR/full-$DATA.tar.gz
