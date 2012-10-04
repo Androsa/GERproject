@@ -1,0 +1,4 @@
+domain rtfm.com.br
+search rtfm.com.br
+nameserver 192.168.2.7
+nameserver 192.168.2.8

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+ifname=$(basename $0)
+
+#echo $* $ifname > /tmp/$PPP_IFACE
+
+if [ "$PPP_IFACE" != "$ifname" ]; then
+  exit 0;
+fi
+
+# static routes below ...
+
